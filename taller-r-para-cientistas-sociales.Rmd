@@ -1,6 +1,6 @@
 ---
-title: 'R para Cientistas Sociales: Taller Introductorio'
-author: "Ariana Bardauil"
+title: "Taller R para cientistas sociales"
+author: "Ariana Bard"
 date: "`r Sys.Date()`"
 lang: "es"
 output:
@@ -19,82 +19,6 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-💻*¡Bienvenidos al Taller introductorio: R para Cientistas Sociales!*
-💻.
-
-A a lo largo de esta jornada abordaremos el uso de R para las ciencias
-sociales. **No se requiere experiencia previa en programación ni
-análisis de datos,** ya que este taller está diseñado para todxs, desde
-principiantes hasta aquellos con cierta experiencia.
-
-🤔 **¿Por qué R?** R es un lenguaje de programación ampliamente
-utilizado en la ciencia de datos, estadísticas y análisis de datos. En
-las ciencias sociales, R puede ser una herramienta invaluable para
-explorar datos, identificar patrones, y comunicar tus hallazgos de
-manera efectiva estudies la carrera que estudies.
-
-**Podes acceder al repositorio
-[acá](https://github.com/ariibard/R-para-Ciencias-Sociales)**. Allí
-vamos a estar subiendo los archivos y documentos del curso.
-
-➡️ Este taller es organizado por el proyecto de investigación *"La trama
-territorial de programas sociales en el conurbano bonaerense: entre
-nación, municipios y organizaciones sociales (2015-2023)" r*adicado en
-el Departamento de Derecho y Ciencia Política de la **Universidad
-Nacional de La Matanza** (UNLaM).
-
-
-![](imagenes/logo-unlam.png){width="212" align="right"}
-
-# Instalación de R y RStudio
-
-#### Instalación de R
-
-1️⃣ Para descargar R y Rstudio, debes acceder a la página de intalación
-de [Posit](https://posit.co/download/rstudio-desktop/).
-
-![](imagenes/1-instalacion.png)
-
-2️⃣ Lo primero que debemos hacer es **instalar R**. Para ello,
-seleccionaremos el **paso 1** que te llevara a la [página de
-CRAN](https://cran.rstudio.com/) (Comprehensive R Archive Network) que
-es el *repositorio central de software de R*. Allí, deberás seleccionar
-el *sistema operativo que utilices*.
-
-![](imagenes/1.3-instalacion.png)
-
-3️⃣ Luego deberás seleccionar el "install for the first time" (Instalar
-por primera vez) en la parte superior de la página:
-
-![](imagenes/1.1-instalacion.png)
-
-#### Instalación de R Studio
-
-4️⃣ Una vez que lo descargas, deberás ejecutar el .exe y seguir los pasos
-de la instalación. La última versión de R es la 9.1.
-
-5️⃣En cuanto hayas descargado R, deberás descargar RStudio que es el IDE
-que estaremos usando a lo largo del curso.
-
-Para ello vuelve a la [página de
-posit](https://posit.co/download/rstudio-desktop/) y selecciona el Paso
-2.
-
-![](imagenes/1-instalacion.png)
-
-También podés seleccionar la opción de descarga que mejor se adapte a tu
-sistema operativo
-
-![](imagenes/1.2-instalacion.png)
-
-¡Felicidades! Ahora tienes R y RStudio instalados en tu compu. En caso
-de tener algún inconveniente no dudes en escribirnos.
-
-📅 **Nos vemos el 23 de noviembre a las 17 30 hs en la biblioteca de la
-UNLaM para continuar con este taller**
-
-✨ En esta página estaremos subiendo lo que veremos ese día ✨
 
 # ¿Con qué trabajamos en R?
 
@@ -117,7 +41,6 @@ verde**]{style="color:green"}
 
 ```{r}
 # Esto es un comentario. Para comentar usamos el # o CTRL + ALT + C
-
 
 ```
 
@@ -269,7 +192,7 @@ Pueden encontrar más información sobre importacion y exportacion de
 archivos [aquí](https://r-coder.com/exportar-datos-r/) o
 [aquí](https://myrbooksp.netlify.app/import.html)
 
-# Analizamos el potenciar trabajo
+# Analizamos el potenciar trabajo 
 
 Primero vamos a ver qué hay en el df del potenciar trabajo
 
@@ -307,10 +230,10 @@ summary(df)
 
 # Graficamos
 
-Para graficar usamos `ggplot2`, es un paquete que se encuentra dentro de
+Para graficar usamos ggplot2, es un paquete que se encuentra dentro de
 Tidyverse.
 
-`Tidyverse` es un conjunto de paquetes en R diseñados para la ciencia de
+Tidyverse es un conjunto de paquetes en R diseñados para la ciencia de
 datos. Estos paquetes comprenden funciones que facilitan el proceso de
 importación, limpieza, transformación, visualización, modelado y
 comunicación de datos. Pueden explorarlos mediante la
@@ -331,6 +254,9 @@ este mundo de la visualización. El paquete `esquisse` te permite hacer
 un boceto del gráfico y luego copiar el codigo en tu trabajo a través de
 la función `esquisser`
 
+Vamos a instalar este paquete y vamos a usar la función para hacer un
+gráfico en el que veamos la cantidad de titulares por provincia.
+
 ```{r}
 #instalaremos el paquete esquisse
 
@@ -341,43 +267,4 @@ library(esquisse)
 #esquisser(df) #corremos la funcion de visualizacion
 
 
-# Gráfico resultante
-
-ggplot(df) +
-  aes(x = periodo, weight = titulares) +
-  geom_bar(fill = "#36B08E") +
-  labs(
-    x = "Cantidad",
-    y = "Período",
-    title = "Titulares del potenciar trabajo por año",
-    subtitle = "Cantidad de titulares (2021-2023)",
-    caption = "Fuente: Datos abiertos del MDSN"
-  ) +
-  theme_classic() +
-  theme(
-    plot.title = element_text(size = 16L,
-    face = "bold",
-    hjust = 0.5),
-    plot.subtitle = element_text(size = 15L,
-    hjust = 0.5)
-  )
 ```
-
-# Presentación
-
-Accedé a la presentación
-[acá](https://arianabard.netlify.app/posts/rparacientistassociales/)
-
-
-
-## Fuente
-
--   [R en 90
-    minutos](https://www.nucleodeinnovacion.com/post/nis-en-la-facultad-de-ciencias-sociales-con-r-en-90-minutos) -
-    Nucleo de Innovación Social (NIS)
-
--   [Introducción al Análisis de Datos en
-    R](https://github.com/elateneoac/cursoR_2023) - el Ateneo A.C
-    
-    
-![](imagenes/logo-unlam.png){width="212" align="right"}
