@@ -18,6 +18,10 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("devtools")
+#devtools::install_github("juba/rdmformats")
+
 ```
 
 # ¿Con qué trabajamos en R?
@@ -168,7 +172,7 @@ al menos una de las tres alternativas:
 # 
 # potenciar_trabajo <- read.csv(url)
 
-potenciar_trabajo <- read.csv("potenciar-trabajo-titulares-2022-10-01.csv")
+potenciar_trabajo <- read.csv("data/potenciar-trabajo-titulares-2022-10-01.csv")
 ```
 
 Para descargarlo a nuestro espacio de trabajo usamos la funcion
@@ -177,7 +181,7 @@ Para descargarlo a nuestro espacio de trabajo usamos la funcion
 ```{r}
 
 # Guardo el csv
-write.csv(potenciar_trabajo, "df_potenciar.csv")
+write.csv(potenciar_trabajo, "data/df_potenciar.csv")
 ```
 
 para leer el archivo desde nuestra compu:
@@ -185,7 +189,7 @@ para leer el archivo desde nuestra compu:
 ```{r}
 
 # Leo el df 
-df <- read.csv("df_potenciar.csv")
+df <- read.csv("data/df_potenciar.csv")
 ```
 
 Pueden encontrar más información sobre importacion y exportacion de

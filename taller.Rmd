@@ -18,6 +18,9 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("devtools")
+#devtools::install_github("juba/rdmformats")
 ```
 
 💻*¡Bienvenidos al Taller introductorio: R para Cientistas Sociales!*
@@ -241,11 +244,11 @@ al menos una de las tres alternativas:
 
 ```{r}
 #Defino url
-# url <- ("https://datosabiertos.desarrollosocial.gob.ar/dataset/d45687c0-f2ba-41d9-9989-0ad9799308ae/resource/c5c925e0-7ce0-41e5-b3ff-8ebb51d4be72/download/potenciar-trabajo-titulares-2022-10-01.csv")
+#url <- ("https://datosabiertos.desarrollosocial.gob.ar/dataset/d45687c0-f2ba-41d9-9989-0ad9799308ae/resource/c5c925e0-7ce0-41e5-b3ff-8ebb51d4be72/download/potenciar-trabajo-titulares-2022-10-01.csv")
 # 
-# potenciar_trabajo <- read.csv(url)
+#potenciar_trabajo <- read.csv(url)
 
-potenciar_trabajo <- read.csv("potenciar-trabajo-titulares-2022-10-01.csv")
+potenciar_trabajo <- read.csv("data/potenciar-trabajo-titulares-2022-10-01.csv")
 ```
 
 Para descargarlo a nuestro espacio de trabajo usamos la funcion
@@ -254,7 +257,7 @@ Para descargarlo a nuestro espacio de trabajo usamos la funcion
 ```{r}
 
 # Guardo el csv
-write.csv(potenciar_trabajo, "df_potenciar.csv")
+write.csv(potenciar_trabajo, "data/df_potenciar.csv")
 ```
 
 para leer el archivo desde nuestra compu:
